@@ -1,11 +1,22 @@
-<div class="home_map_div">
-        <div  class="home_map_alaska_div"><a href="Land?region=ala"></a></div>
-        <div class="home_map_canada_div"><a href="Land?region=ca"></a></div>
-        <div class="home_map_europe_div"><a href="Land?region=eu"></a></div>
-        <div class="home_map_russia_div"><a href="Land?region=ru"></a></div>
-        <div class="home_map_usa_div"><a href="Land?region=us"></a></div>
-        <div class="home_map_south_america_div"><a href="Land?region=sa"></a></div>
-        <div class="home_map_africa_div"><a href="LandLand?region=afr"></a></div>
-        <div class="home_map_asia_div"><a href="Land?region=as"></a></div>
-        <div class="home_map_australia_div"><a href="Land?region=aus"></a></div>
+<?php
+
+if (isset( $_SESSION['user_id'] ) ) {
+    echo "<br/>";
+    echo "<div class='contentuserindex'>
+                    <p>Herzlich Willkommen Sie sind nun eingeloggt!</p>
+                  </div>" ;
+
+}
+?>
+<div class="content">
+    <div class="titel"><?= $heading ?></div>
+    <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer
+    </p>
 </div>

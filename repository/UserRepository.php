@@ -13,7 +13,7 @@ class UserRepository extends Repository
      * Diese Variable wird von der Klasse Repository verwendet, um generische
      * Funktionen zur Verfügung zu stellen.
      */
-    protected $tableName = 'users';
+    protected $tableName = 'user';
 
     /**
      * Erstellt einen neuen benutzer mit den gegebenen Werten.
@@ -25,124 +25,49 @@ class UserRepository extends Repository
      * @param $lastName Wert für die Spalte lastName
      * @param $email Wert für die Spalte email
      * @param $password Wert für die Spalte password
-     *lkjljkl
+     *
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
-    public function readallUsers() {
-        $query = "SELECT * FROM $this->tableName";
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->execute();
-        $result = $statement->get_result();
-        if (!$result) {
-            throw new Exception($statement->error);
-        }
-        // Datensätze aus dem Resultat holen und in das Array $rows speichern
-        $rows = array();
-        while ($row = $result->fetch_object()) {
-            $rows[] = $row;
-        }
-        $statement->close();
-        return $rows;
-    }
-
-    public function create($username, $firstname, $lastname, $email, $password)
+    public function create($vorname,$nachname,$plz,$ort,$telefonnumer,$email, $password)
     {
-        $query = "INSERT INTO $this->tableName (username, firstname, lastname, email, password) VALUES (?,?,?,?,?)";
+        $password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 14]);
+
+        $query = "INSERT INTO $this->tableName (vorname, nachname, mail, passwort,plz,ort,telefonnummer) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('sssss', $username, $firstname, $lastname, $email, $password);
+        $statement->bind_param('ssssiss', $vorname, $nachname, $email,$password,$plz,$ort,$telefonnumer);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
 
-        $statement->close();
-        header('Location: /user');
+        return $statement->insert_id;
     }
-
-    public function deleteById($userid)
-    {
-        $query = "DELETE FROM users WHERE user_id=?";
+    public function update($uid,$vereinsname,$kontaktperson){
+        $query = "UPDATE $this->tableName SET vereinsname = ?, kontaktperson = ? WHERE id=? ;";
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('i', $userid);
-
-        if (!$statement->execute()) {
-            throw new Exception($statement->error);
-        }
-
-        $statement->close();
-
-        header('Location: /user/logout');
-    }
-
-    public function login($username, $password)
-    {
-        $query = "SELECT username, user_id, password FROM users WHERE username=?";
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('s', $username);
+        $statement->bind_param('ssi',$vereinsname,$kontaktperson,$uid);
         $statement->execute();
+        header('Location: /user/meinVerein');
+    }
+    public function login($loginemail,$loginpassword){
+        $query = "SELECT * FROM $this->tableName WHERE mail = ?";
 
-        $userResult = $statement->get_result();
-        if (!$userResult) {
-            $_SESSION['loginerror'] = true;
-            $_SESSION['message'] = 'incorrect username';
-            header('Location:'.$_SERVER['HTTP_REFERER']);
+            $statement = ConnectionHandler::getConnection()->prepare($query);
+            $statement->bind_param('s',$loginemail);
+            $statement->execute();
+            $result = $statement->get_result();
+            $user = $result->fetch_object();
 
-        }
-        if ($userResult) {
-
-            $user = $userResult->fetch_object();
-
-            if (password_verify($password, $user->password)) {
-                $_SESSION['loginsuccess'] = true;
-                $_SESSION['loginmiss'] = false;
-                $_SESSION['loginerror'] = false;
-                $_SESSION['username'] = $username;
-                $_SESSION['userid'] = $user->user_id;
-                $_SESSION['message'] = 'Youre logged in!';
-                header('Location: /user/profile');
+            // Verify user password and set $_SESSION
+            if (password_verify($loginpassword, $user->passwort)){
+                $_SESSION['user_id'] = $user->id;
+                return $user->id;
             } else {
-                $_SESSION['loginerror'] = true;
-                $_SESSION['message'] = 'username or password are wrong';
-                header('Location:'.$_SERVER['HTTP_REFERER']);
+
+                return -1;
+
             }
-
-        }
-        $statement->close();
-
-    }
-
-    public function userSignedIn() {
-        $query = "SELECT username, firstname, lastname, email, user_picture FROM users WHERE user_id=?";
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('i', $_SESSION['userid']);
-        $statement->execute();
-        $result = $statement->get_result();
-        if (!$result) {
-            throw new Exception($statement->error);
-        }
-        // Datensätze aus dem Resultat holen und in das Array $rows speichern
-        $rows = array();
-        while ($row = $result->fetch_object()) {
-            $rows[] = $row;
-        }
-        $statement->close();
-        return $rows;
-    }
-
-    public function uploadPicture($path, $user) {
-        $query="UPDATE users SET user_picture=? WHERE username=?";
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ss', $path, $user);
-        $statement->execute();
-        $statement->close();
-    }
-
-    public function update($userid, $username, $firstname, $lastname, $email, $password)
-    {
-        $query = "UPDATE users SET username=? ,firstname=?, lastname=?, email=?, password=? WHERE user_id=?";
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssssss', $username, $firstname, $lastname, $email, $password, $userid);
-        $statement->execute();
-        header('Location: /user/profile');
     }
 }
+

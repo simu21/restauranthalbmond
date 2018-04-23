@@ -41,18 +41,4 @@ class DefaultController
         $view->heading = 'Startseite';
         $view->display();
     }
-
-    public function login()
-    {
-        header("/login");
-    }
-
-    public function logout()
-    {
-        header("/logout");
-    }
-
-
-
-
 }

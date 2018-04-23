@@ -1,1 +1,0 @@
-<div style="width: 1000px; height: 300px; font-size: 100px; border-radius: 2%; margin-left: 26%; margin-top: 150px; text-align: center" class="aler alert-danger"><strong>SITE UNDER CONSTRUCTION</strong></div>

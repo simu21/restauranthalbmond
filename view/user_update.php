@@ -1,33 +1,25 @@
-<?php
-$form = new Form('/user/doUpdate', 'post');
-?>
-<script>
-    alert('Füllen Sie bitte alle Füller aus!');
-</script>
-    <a>username:</a>
-    <input title="Füllen Sie das Feld aus" pattern="(([a-Z]).{1,20})" onblur="this.placeholder = 'username'" onfocus="this.placeholder= ''" class="nav_login_inputs" placeholder="username" type="text" name="username"/>
-    <a>firstname:</a>
-    <input title="Füllen Sie das Feld aus" pattern="(([a-Z]).{1,20})" onblur="this.placeholder = 'firstname'" onfocus="this.placeholder= ''" class="nav_login_inputs" placeholder="firstname" type="text" name="firstname"/>
-    <a>lastname:</a>
-    <input title="Füllen Sie das Feld aus" pattern="(([a-Z]).{1,20})" onblur="this.placeholder = 'lastname'" onfocus="this.placeholder= ''" class="nav_login_inputs" placeholder="lastname" type="text" name="lastname"/>
-    <a>email:</a>
-    <input onblur="this.placeholder = 'user@example.com'" onfocus="this.placeholder= ''"  class="nav_login_inputs" placeholder="user@example.com" type="email" name="email"/>
-    <a>password:</a>
-    <input title="Das Passswort muss 1 klein-/ und 1 Grossbuchstaben beinhalten, dazu 8 zeichen lang sein und 1 Sonderzeichen beinhalten" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%-_?]).{8,20})" onblur="this.placeholder = 'password'" onfocus="this.placeholder= ''" class="nav_login_inputs" placeholder="password" type="password" name="password"/>
-    <input class="update_profile_btn" type="submit" name="submit" value="update">
-<?php
-echo $form->end();
-?>
-<script>
-    jQuery(function() {
-        $('form').submit(function(event) {
+<?php if(!isset($_SESSION['user_id'])): ?>
 
-            var r = confirm("Do you really wanna UPDATE your profile?");
-            console.log(r);
-            if (!r) {
-                event.preventDefault();
-            }
-        });
-    });
-</script>
+<div class="content">
+    <h2 class="u_titel">Du bist nicht eingeloggt!</h2>
+</div>
 
+<?php else: ?>
+
+<div class="content">
+    <form action="/user/doUpdate" method="post">
+
+        <div class="titel"><?= $heading ?></div>
+
+        <label for="kontaktperson" class="label">Kontaktperson</label>
+        <input id="kontaktperson" name="kontaktperson" type="text" value="<?= htmlspecialchars($verein->kontaktperson); ?>" class="textForm" required/>
+
+        <label for="vereinsname" class="label">Vereinsname</label>
+        <input id="vereinsname" name="vereinsname" type="text"  value="<?= htmlspecialchars($verein->vereinsname); ?>" class="textForm" required/>
+
+        <input id="send" name="send" value="Bearbeiten" type="submit" class="submitForm">
+
+    </form>
+</div>
+
+<?php endif ?>

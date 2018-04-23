@@ -2,3 +2,7 @@
 2. git commit -m " status"	--> comment	
 3. git push			--> hochladen
 4. git pull 			--> herunterladen
+
+falls push nicht geht
+5. git stash
+6. wieder von 1.

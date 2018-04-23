@@ -53,7 +53,11 @@ class Dispatcher
         $args = array_slice($uriFragments, 2);
 
         // Den gewünschten Controller laden
-        //   Achtung! Hier stürzt PHP ab, sollte der Controller nicht existieren
+        //   Wenn die File nicht exisitiert -> DefaultController
+        if(!file_exists("../controller/$controllerName.php")) {
+            $controllerName = 'DefaultController';
+        }
+
         require_once "../controller/$controllerName.php";
 
         // Eine neue Instanz des Controllers wird erstellt und die gewünschte

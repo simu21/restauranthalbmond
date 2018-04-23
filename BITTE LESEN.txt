@@ -1,0 +1,3 @@
+Die Datenbank toppicoachdb muss erstellt werden.
+
+Registrier-Funktion vorhanden!

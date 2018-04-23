@@ -39,7 +39,7 @@ class ConnectionHandler
      *
      * @throws Exception wenn der Verbindungsaufbau schiefgegeangen ist.
      *
-     * @return Die MySQLi Verbindung, welche für den Zugriff aud die Datenbank
+     * @return MySQLi
      *             verwendet werden kann.
      */
     public static function getConnection()
@@ -58,7 +58,6 @@ class ConnectionHandler
             self::$connection = new MySQLi($host, $username, $password, $database);
             if (self::$connection->connect_error) {
                 $error = self::$connection->connect_error;
-
                 throw new Exception("Verbindungsfehler: $error");
             }
 
