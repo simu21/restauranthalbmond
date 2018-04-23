@@ -7,7 +7,7 @@ require_once '../lib/Repository.php';
  *
  * Die Ausführliche Dokumentation zu Repositories findest du in der Repository Klasse.
  */
-class GerichtRepository extends Repository
+class GerichtArtRepository extends Repository
 {
     /**
      * Diese Variable wird von der Klasse Repository verwendet, um generische
@@ -29,7 +29,7 @@ class GerichtRepository extends Repository
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
 
-    public function readAllGerichte($uid)
+    public function readAllGerichteArt($uid)
     {
         // Query erstellen
         $query = "SELECT * FROM {$this->tableName} WHERE uid=?";
