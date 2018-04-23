@@ -1,7 +1,5 @@
 <?php
 if(isset($_SESSION['user_id'])):
-
-header('Location: /user/meinVerein');
 else: ?>
 
 <div class="content">

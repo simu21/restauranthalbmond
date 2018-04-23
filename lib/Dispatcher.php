@@ -54,6 +54,7 @@ class Dispatcher
 
         // Den gewünschten Controller laden
         //   Wenn die File nicht exisitiert -> DefaultController
+
         if(!file_exists("../controller/$controllerName.php")) {
             $controllerName = 'DefaultController';
         }

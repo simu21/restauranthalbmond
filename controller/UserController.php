@@ -1,7 +1,7 @@
 <?php
 
 require_once '../repository/UserRepository.php';
-require_once '../repository/MannschaftRepository.php';
+require_once '../repository/GerichtRepository.php';
 
 /**
  * Siehe Dokumentation im DefaultController.
@@ -20,21 +20,7 @@ class UserController
         $view->display();
     }
 
-    //MeinVerein mit den Mannschaften anzeigen
-    public function meinVerein(){
-        $userRepository = new UserRepository();
-        $mannschaftRepository = new MannschaftRepository();
-        $view = new View('user_meinVerein');
-        $view->title = 'Mein Verein';
-        $view->heading = 'Mein Verein';
-        $view->heading2 ="Mannschaften";
-        if(isset($_SESSION['user_id'])) {
-            $sid = $_SESSION['user_id'];
-            $view->verein = $userRepository->readById($sid);
-            $view->mannschaft = $mannschaftRepository->readAllMannschaft($sid);
-        }
-        $view->display();
-    }
+
 
     // Verein update-Anzeige
     public function updateVerein(){
@@ -138,7 +124,7 @@ class UserController
                 if($userRepository->login($email, $password) < 1) {
                     header('Location: /user/login?message=Die Daten stimmen nicht überein!');
                 } else {
-                    header('Location: /user/meinVerein');
+                    header('Location: /gerichtart/meineGerichte');
                 }
             }
             else{

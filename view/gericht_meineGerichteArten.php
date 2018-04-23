@@ -1,8 +1,9 @@
 <?php
 if(isset($_SESSION['user_id'])):?>
     <div class="content">
-        <span class="titel">Verein: <?= htmlspecialchars($verein->vereinsname); ?></span><br>
-        <p class="u_titel">Kontaktperson: <?= htmlspecialchars($verein->kontaktperson); ?></p>
+        <?php htmlspecialchars($user->vorname);?>
+        <span class="titel">Angemeldet als: <?=  strtoupper($user->vorname); ?></span><br>
+        <p class="u_titel">Kontaktperson: <?= htmlspecialchars($user->kontaktperson); ?></p>
     </div>
 
 
