@@ -1,0 +1,394 @@
+html{
+    zoom: 69%;
+}
+
+.form-horizontal{
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 400px;
+    height: 500px;
+    zoom: 150%;
+    padding: 30px;
+    background: white;
+    color: black;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+
+.logout_a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.land_a{
+    text-decoration: none;
+    color: deeppink;
+}
+
+.land_a:hover {
+    text-decoration: none;
+    color: deepskyblue;
+}
+
+.about_us_div{
+    text-decoration: none;
+    color: white;
+    border: double 2px white;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 600px;
+    width: 1000px;
+    link: none;
+    padding: 30px;
+}
+
+form.login_form{
+    width: 348px;
+    margin: 0;
+}
+
+
+form.logout_form{
+    width: 80px;
+    margin: 0;
+    float: right;
+    border: none;
+    background-color: whitesmoke;
+}
+
+.login_button_header{
+    background: transparent;
+    width: 80px;
+    border: none;
+    border-bottom: double;
+}
+
+.login_button_header:hover{
+    background: orange;
+    zoom: 110%;
+}
+
+.submit_button_register{
+    background: transparent;
+    width: 80px;
+    border: none;
+    border-bottom: double;
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+.submit_button_register:hover{
+    zoom: 120%;
+    margin-left: 95px;
+    margin-top: 15px;
+}
+
+.update_profile_btn{
+    background: transparent;
+    width: 80px;
+    border: none;
+    border-bottom: double;
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+.update_profile_btn:hover{
+    zoom: 120%;
+    margin-left: 95px;
+    margin-top: 15px;
+}
+
+.update_profile_btn{
+
+}
+.form-horizontal h2{
+    background: #4D4D4D;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #797979;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+}
+
+.form-horizontal input[type="text"],
+.form-horizontal input[type="date"],
+.form-horizontal input[type="datetime"],
+.form-horizontal input[type="email"],
+.form-horizontal input[type="number"],
+.form-horizontal input[type="search"],
+.form-horizontal input[type="time"],
+.form-horizontal input[type="url"],
+.form-horizontal input[type="password"],
+.form-horizontal textarea,
+.form-horizontal select
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 45px;
+}
+
+.form-horizontal textarea{
+    resize:none;
+    overflow: hidden;
+}
+
+.form-horizontal input[type="button"]:hover,
+.form-horizontal input[type="submit"]:hover {
+    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+    background-color:#34CACA;
+}
+
+.nav_login_inputs{
+    margin: 3px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: groove;
+}
+
+.nav_login_inputs:focus{
+    outline: none;
+}
+
+.user_logo_register a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+user_logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.user_logo_register{
+    width: 70px;
+    height: 60px;
+    margin: 3px;
+    background: url("images/userlogo_register.png") no-repeat;
+    background-size: contain;
+    float: left;
+    position: relative;
+    z-index: 5;
+}
+
+.user_logo{
+    width: 70px;
+    height: 60px;
+    margin: 3px;
+    background: url("images/userlogo.png") no-repeat;
+    background-size: contain;
+    float: left;
+    position: relative;
+    z-index: 5;
+}
+.nav_login{
+    height: 68px;
+    width: 320px;
+    float: right;
+    margin: 0;
+}
+
+.meldung_header{
+    float:left;
+    margin-right: 10px;
+}
+.body{
+    background-color: black;
+    color:white;
+}
+.form-horizontal{
+    background-color: white;
+}
+
+.home_map_div a{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+.home_map_div{
+    background: url("images/worldmap.png");
+    height: 1060px;
+    width: 1300px;
+    margin-left: 17%;
+    margin-top: -60px;
+    position: absolute;
+}
+
+.home_map_div div:hover{
+    opacity: 0.4;
+}
+
+
+.home_map_div div{
+    border-radius: 15%;
+}
+
+.home_map_div a{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home_map_alaska_div{
+    margin-top: 6%;
+    margin-left: 8.8%;
+    height: 50px;
+    width: 150px;
+}
+.home_map_canada_div{
+    margin-top: 2.4%;
+    margin-left: 14.5%;
+    height: 50px;
+    width: 165px;
+}
+.home_map_europe_div{
+    margin-top: -3.8%;
+    margin-left: 48.4%;
+    height: 50px;
+    width: 160px;
+}
+.home_map_russia_div{
+    margin-top: -3.8%;
+    margin-left: 71.7%;
+    height: 50px;
+    width: 155px;
+}
+.home_map_usa_div{
+    margin-top: 55.5%;
+    margin-left: 16.7%;
+    height: 50px;
+    width: 245px;
+}
+
+.home_map_south_america_div{
+    margin-top: 1.4%;
+    margin-left: 34.7%;
+    height: 50px;
+    width: 260px;
+}
+
+.home_map_africa_div{
+    margin-top: -9.2%;
+    margin-left: 46%;
+    height: 50px;
+    width: 138px;
+}
+
+.home_map_asia_div{
+    margin-top: -3.8%;
+    margin-left: 63.4%;
+    height: 50px;
+    width: 120px;
+}
+
+.home_map_australia_div{
+    margin-top: 1.6%;
+    margin-left: 77.6%;
+    height: 50px;
+    width: 180px;
+}
+
+.home_map_alaska_div:hover{
+   background: saddlebrown;
+}
+
+.home_map_canada_div:hover{
+    background: yellow;
+}
+.home_map_europe_div:hover{
+    background: dodgerblue;
+}
+.home_map_russia_div:hover{
+    background: deepskyblue;
+}
+.home_map_usa_div:hover{
+    background: darkorange;
+}
+
+.home_map_south_america_div:hover{
+    background: red;
+}
+
+.home_map_africa_div:hover{
+    background: blueviolet;
+}
+
+.home_map_asia_div:hover{
+    background: green;
+}
+
+.home_map_australia_div:hover{
+    background: greenyellow;
+}
+
+#ingridients {
+    margin: 50px;
+    font-size: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#recipepic {
+    height: 500px;
+    width: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+#profilepic {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#foodpic {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-top: -25px;
+}
+
+#userlist {
+    text-align: center;
+}
+#usercontainer {
+    margin-left: 100px;
+}
+
+.input_format{
+    margin: 10px;
+    color: white;
+    background-color: deeppink;
+    border: solid white 2px;
+    float: left;
+}
+
+.input_format:hover{
+    background-color: deepskyblue;
+}
+
+.upload_form{
+    width: 400px;
+    height: 150px;
+}
