@@ -30,6 +30,6 @@ CREATE TABLE gerichte (
   bildpfad		varchar(255) NOT NULL,
   artgericht_id int(11) NOT NULL,
   PRIMARY KEY (gericht_id),
-  CONSTRAINT FK_artgerichte(artgericht_id)
-  REFERENCES artegerichte(artgericht_id)
+  CONSTRAINT FK_artgerichte FOREIGN KEY (artgericht_id)
+  REFERENCES artgerichte(artgericht_id)
   ON DELETE CASCADE);
