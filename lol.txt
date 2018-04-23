@@ -1,0 +1,4 @@
+1. git add .			--> zwischenspeicher
+2. git commit -m " status"	--> comment	
+3. git push			--> hochladen
+4. git pull 			--> herunterladen
