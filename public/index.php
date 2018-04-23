@@ -1,24 +1,27 @@
-<?php
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Halbmond</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-session_start();
-if(!isset($_SESSION['loginerror']) && !isset($_SESSION['loginmiss']) && !isset($_SESSION['loginsuccess'])){
-    $_SESSION['loginerror'] = false;
-    $_SESSION['loginsucces'] = false;
-    $_SESSION['loginmiss'] = true;
-}
+    <div id="header">
+        <div class="logo">
+            Restaurant<br>Halbmond
+        </div>
 
-/*
- * Die index.php Datei ist der Einstiegspunkt des MVC. Hier werden zuerst alle
- * vom Framework benötigten Klassen geladen und danach wird die Anfrage dem
- * Dispatcher weitergegeben.
- *
- * Wie in der .htaccess Datei beschrieben, werden alle Anfragen, welche nicht
- * auf eine bestehende Datei zeigen hierhin umgeleitet.
- */
+        <navigation>
+            <ul>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </navigation>
 
-require_once '../lib/Dispatcher.php';
-require_once '../lib/formbuilder/FormBuilder.php';
-require_once '../lib/View.php';
+        
+    </div>
 
-$dispatcher = new Dispatcher();
-$dispatcher->dispatch();
+</body>
+</html>
