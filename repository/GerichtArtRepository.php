@@ -57,27 +57,21 @@ class GerichtArtRepository extends Repository
         return $rows;
     }
 
-    public function create($vereinsname, $kontaktperson, $email, $password)
+    public function create($gerichtname,$beschreibung,$uid)
     {
-        $password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 14]);
 
-        $query = "INSERT INTO $this->tableName (vereinsname, kontaktperson, mail, passwort) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (gerichtartname,beschreibung,uid) VALUES (?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss', $vereinsname, $kontaktperson, $email, $password);
-
-        if (!$statement->execute()) {
-            throw new Exception($statement->error);
-        }
-
-        return $statement->insert_id;
-    }
-    public function update($uid,$vereinsname,$kontaktperson){
-        $query = "UPDATE $this->tableName SET vereinsname = ?, kontaktperson = ? WHERE id=? ;";
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssi',$vereinsname,$kontaktperson,$uid);
+        $statement->bind_param('ssi', $gerichtname,$beschreibung,$uid);
         $statement->execute();
-        header('Location: /user/meinVerein');
+
+    }
+    public function update($gaid,$gerichtname,$beschreibung){
+        $query = "UPDATE $this->tableName SET gerichtartname = ?, beschreibung = ? WHERE id=? ;";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement->bind_param('ssi',$gerichtname,$beschreibung,$gaid);
+        $statement->execute();
     }
     public function login($loginemail,$loginpassword){
         $query = "SELECT * FROM $this->tableName WHERE mail = ?";

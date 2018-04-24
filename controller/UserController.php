@@ -2,6 +2,7 @@
 
 require_once '../repository/UserRepository.php';
 require_once '../repository/GerichtRepository.php';
+require_once '../repository/GerichtArtRepository.php';
 
 /**
  * Siehe Dokumentation im DefaultController.
@@ -11,12 +12,17 @@ class UserController
 
     public function index()
     {
-        $userRepository = new UserRepository();
+        $gerichtartRepository = new GerichtArtRepository();
+
 
         $view = new View('user_index');
+        if(isset($_GET['message'])) {
+            $fehlermeldung = $_GET["message"];
+            $view->fehlermeldung = $fehlermeldung;
+        }
         $view->title = 'Alle Gerichte';
         $view->heading = 'Alle Gerichte';
-        $view->users = $userRepository->readAll();
+        $view->gerichtarten = $gerichtartRepository->readAll();
         $view->display();
     }
 
@@ -34,7 +40,21 @@ class UserController
         }
         $view->display();
     }
+    public function gerichteanzeigen(){
+        $gerichtRepository = new GerichtRepository();
+        $gerichartRepository = new GerichtArtRepository();
+        $view = new View('user_gerichtindex');
+        $view->heading = 'Gerichte';
+        $view->title = 'Gerichte';
+        if(isset($_GET['id'])) {
+            $gaid = $_GET['id'];
+            $view->gerichtarten = $gerichartRepository->readById($gaid);
+            $view->gaid= $gaid;
+            $view->gerichte = $gerichtRepository->readAllGerichte($gaid);
 
+        }
+        $view->display();
+    }
     // Verein updaten
     public function doUpdate(){
         if ($_POST['send']) {
@@ -124,7 +144,7 @@ class UserController
                 if($userRepository->login($email, $password) < 1) {
                     header('Location: /user/login?message=Die Daten stimmen nicht überein!');
                 } else {
-                    header('Location: /gerichtart/meineGerichte');
+                    header('Location: /gerichtart/meineGerichtarten');
                 }
             }
             else{

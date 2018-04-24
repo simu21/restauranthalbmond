@@ -13,7 +13,7 @@ class GerichtRepository extends Repository
      * Diese Variable wird von der Klasse Repository verwendet, um generische
      * Funktionen zur Verfügung zu stellen.
      */
-    protected $tableName = 'artgericht';
+    protected $tableName = 'gericht';
 
     /**
      * Erstellt einen neuen benutzer mit den gegebenen Werten.
@@ -29,15 +29,15 @@ class GerichtRepository extends Repository
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
 
-    public function readAllGerichte($uid)
+    public function readAllGerichte($aid)
     {
         // Query erstellen
-        $query = "SELECT * FROM {$this->tableName} WHERE uid=?";
+        $query = "SELECT * FROM {$this->tableName} WHERE aid=?";
 
         // Datenbankverbindung anfordern und, das Query "preparen" (vorbereiten)
         // und die Parameter "binden"
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('i', $uid);
+        $statement->bind_param('i', $aid);
 
         // Das Statement absetzen
         $statement->execute();
@@ -57,25 +57,17 @@ class GerichtRepository extends Repository
         return $rows;
     }
 
-    public function create($vereinsname, $kontaktperson, $email, $password)
+    public function create($gerichtname,$beschreibung,$preis,$bildpfad,$gaid)
     {
-        $password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 14]);
-
-        $query = "INSERT INTO $this->tableName (vereinsname, kontaktperson, mail, passwort) VALUES (?, ?, ?, ?)";
-
+        $query = "INSERT INTO $this->tableName (gerichtname,beschreibung,preis,bildpfad,aid) VALUES (?, ?, ?, ?, ?)";
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss', $vereinsname, $kontaktperson, $email, $password);
-
-        if (!$statement->execute()) {
-            throw new Exception($statement->error);
-        }
-
-        return $statement->insert_id;
+        $statement->bind_param('ssssi', $gerichtname,$beschreibung,$preis,$bildpfad,$gaid);
+        $statement->execute();
     }
-    public function update($uid,$vereinsname,$kontaktperson){
-        $query = "UPDATE $this->tableName SET vereinsname = ?, kontaktperson = ? WHERE id=? ;";
+    public function update($gaid,$gerichtname,$beschreibung){
+        $query = "UPDATE $this->tableName SET gerichtname = ?, beschreibung = ? WHERE id=? ;";
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssi',$vereinsname,$kontaktperson,$uid);
+        $statement->bind_param('ssi',$gerichtname,$beschreibung,$gaid);
         $statement->execute();
         header('Location: /user/meinVerein');
     }

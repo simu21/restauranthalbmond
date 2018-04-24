@@ -10,34 +10,28 @@ class GerichtArtController
 {
     public function index()
     {
-        $userRepository = new UserRepository();
-        $view = new View('user_index');
-        $view->title = 'Benutzer';
-        $view->heading = 'Benutzer';
-        $view->users = $userRepository->readAll();
+        header('Location: /gerichtart/meineGerichtarten');
+    }
+
+    public function createGerichtart(){
+
+        $view = new View('gerichtArt_createGerichtArt');
+        $view->title = 'Gericht hinzufügen';
+        $view->heading = 'Gericht hinzufügen';
         $view->display();
     }
 
-    public function create()
-    {
-        $view = new View('user_create');
-        $view->title = 'Benutzer erstellen';
-        $view->heading = 'Benutzer erstellen';
-        $view->display();
-    }
-
-    //MeinVerein mit den Mannschaften anzeigen
-    public function meineGerichte(){
+    public function meineGerichtarten(){
         $userRepository = new UserRepository();
         $gerichtArtRepository = new GerichtArtRepository();
-        $view = new View('gericht_meineGerichteArten');
+        $view = new View('gerichtart_meineGerichteArten');
         $view->title = 'Meine Gerichte';
         $view->heading = 'Meine Gerichte';
-        $view->heading2 ="Art Gericht";
+        $view->heading2 ="Gerichtearten";
         if(isset($_SESSION['user_id'])) {
             $uid = $_SESSION['user_id'];
             $view->user = $userRepository->readById($uid);
-            $view->gerichte = $gerichtArtRepository->readAllGerichteArt($uid);
+            $view->gerichteArten = $gerichtArtRepository->readAllGerichteArt($uid);
         }
         $view->display();
     }
@@ -45,25 +39,50 @@ class GerichtArtController
     public function doCreate()
     {
         if ($_POST['send']) {
-            $firstName = $_POST['firstName'];
-            $lastName = $_POST['lastName'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+            $gerichtart = $_POST['gerichtart'];
+            $beschreibung = $_POST['gerichtartbeschreibung'];
+            $gerichtArtRepository = new GerichtArtRepository();
+            if(isset($_SESSION['user_id'])) {
+                $uid = $_SESSION['user_id'];
+                $gerichtArtRepository->create($gerichtart, $beschreibung, $uid);
+            }
 
-            $userRepository = new UserRepository();
-            $userRepository->create($firstName, $lastName, $email, $password);
         }
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
+        header('Location: /gerichtart/meineGerichtarten');
+    }
+    public function update(){
+        $gerichtartRepository = new GerichtArtRepository();
+        $view = new View('gerichtart_update');
+        $view->title = 'Gerichtart bearbeiten';
+        $view->heading = 'Gerichtart bearbeiten';
+        if(isset($_GET['id'])) {
+            //gaid = gerichtartID//
+            $gaid = $_GET['id'];
+            $view->gaid = $gaid;
+            $view->gerichtart = $gerichtartRepository->readById($gaid);
+        }
+        $view->display();
+    }
+
+    public function doUpdate(){
+        if ($_POST['send']) {
+            $gaid = $_GET['id'];
+            $gerichtart = $_POST['gerichtart'];
+            $beschreibung = $_POST['gerichtartbeschreibung'];
+            $gerichtartRepository = new GerichtArtRepository();
+            $gerichtartRepository->update($gaid, $gerichtart, $beschreibung);
+        }
+        header('Location: /gerichtart/meinegerichtarten');
     }
 
     public function delete()
     {
-        $userRepository = new UserRepository();
-        $userRepository->deleteById($_GET['id']);
+        $gerichtartRepository = new GerichtArtRepository();
+        $gerichtartRepository->deleteById($_GET['id']);
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
+        header('Location: /gerichtart/meinegerichtarten');
     }
 }

@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2369866d-2770-4ee7-8486-d07f43de6154" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/repository/GerichtArtRepository.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/controller/LoginController.php" afterPath="$PROJECT_DIR$/controller/GerichtController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/view/user_meinVerein.php" afterPath="$PROJECT_DIR$/view/gericht_meineGerichteArten.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/view/gericht_meineGerichteArten.php" afterPath="$PROJECT_DIR$/view/gerichtart_meineGerichteArten.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/view/mannschaft_createMannschaft.php" afterPath="$PROJECT_DIR$/view/gerichtart_createGerichtart.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/GerichtArtController.php" afterPath="$PROJECT_DIR$/controller/GerichtArtController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/GerichtController.php" afterPath="$PROJECT_DIR$/controller/GerichtController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/UserController.php" afterPath="$PROJECT_DIR$/controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Dispatcher.php" afterPath="$PROJECT_DIR$/lib/Dispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repository/GerichtArtRepository.php" afterPath="$PROJECT_DIR$/repository/GerichtArtRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repository/GerichtRepository.php" afterPath="$PROJECT_DIR$/repository/GerichtRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/header.php" afterPath="$PROJECT_DIR$/view/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/user_index.php" afterPath="$PROJECT_DIR$/view/user_index.php" />
@@ -21,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gericht_meineGerichteArten.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/gericht_meineGerichteArten.php">
+      <file leaf-file-name="GerichtArtController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/GerichtArtController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -34,19 +35,21 @@
       <file leaf-file-name="user_index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/user_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+            <state relative-caret-position="306">
+              <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/header.php">
+      <file leaf-file-name="default_index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/default_index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1524214878953" expanded="true" signature="102:199" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,79 +57,81 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="126" column="49" lean-forward="false" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
+            <state relative-caret-position="442">
+              <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dispatcher.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Dispatcher.php">
+      <file leaf-file-name="user_gerichtindex.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/user_gerichtindex.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="125" lean-forward="false" selection-start-line="8" selection-start-column="125" selection-end-line="8" selection-end-column="125" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/DefaultController.php">
+      <file leaf-file-name="MannschaftRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/repository/MannschaftRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GerichtController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/GerichtController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="69" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GerichtRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/repository/GerichtRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="306">
+              <caret line="42" column="76" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="76" />
               <folding>
-                <marker date="1524483478192" expanded="true" signature="1024:1068" ph="SELECT * FRO... $" />
-                <marker date="1524483478192" expanded="true" signature="1945:2038" ph="INSERT INTO ${$this-&gt;tableName}... " />
-                <marker date="1524483478192" expanded="true" signature="2431:2504" ph="UPDATE ${$th... " />
-                <marker date="1524483478192" expanded="true" signature="2811:2856" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+                <marker date="1524468298058" expanded="true" signature="1016:1091" ph="INSERT INTO ${$this-&gt;tableName}... " />
+                <marker date="1524468298058" expanded="true" signature="1399:1468" ph="UPDATE ${$th... " />
+                <marker date="1524468298058" expanded="true" signature="1793:1838" ph="SELECT * FRO... $" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GerichtArtController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/GerichtArtController.php">
+      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+            <state relative-caret-position="1003">
+              <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+              <folding>
+                <marker date="1524474950639" expanded="true" signature="1115:1230" ph="INSERT INTO ${$this-&gt;tableName}... " />
+                <marker date="1524474950639" expanded="true" signature="1640:1713" ph="UPDATE ${$th... " />
+                <marker date="1524474950639" expanded="true" signature="2020:2065" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Repository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Repository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="155" column="46" lean-forward="true" selection-start-line="155" selection-start-column="46" selection-end-line="155" selection-end-column="46" />
+              <folding>
+                <marker date="1524138631222" expanded="true" signature="3791:3834" ph="SELECT * FRO... $" />
+                <marker date="1524138631222" expanded="true" signature="4995:5037" ph="SELECT * FRO... $" />
+                <marker date="1524138631222" expanded="true" signature="5780:5821" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Security.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/Security.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GerichtArtRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/repository/GerichtArtRepository.php">
+      <file leaf-file-name="user_login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/user_login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-              <folding>
-                <marker date="1524483785116" expanded="true" signature="1030:1074" ph="SELECT * FRO... $" />
-                <marker date="1524483785116" expanded="true" signature="1951:2044" ph="INSERT INTO ${$this-&gt;tableName}... " />
-                <marker date="1524483785116" expanded="true" signature="2437:2510" ph="UPDATE ${$th... " />
-                <marker date="1524483785116" expanded="true" signature="2817:2862" ph="SELECT * FRO... ${$this-&gt;tableName}" />
-              </folding>
+            <state relative-caret-position="425">
+              <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,6 +146,9 @@
       <find>doCrea</find>
       <find>doCreate</find>
       <find>doLogi</find>
+      <find>images</find>
+      <find>cre</find>
+      <find>delete</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,15 +163,22 @@
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/view/user_create.php" />
         <option value="$PROJECT_DIR$/repository/UserRepository.php" />
-        <option value="$PROJECT_DIR$/view/user_index.php" />
         <option value="$PROJECT_DIR$/lib/Dispatcher.php" />
-        <option value="$PROJECT_DIR$/controller/GerichtController.php" />
-        <option value="$PROJECT_DIR$/repository/GerichtRepository.php" />
-        <option value="$PROJECT_DIR$/controller/UserController.php" />
-        <option value="$PROJECT_DIR$/view/header.php" />
-        <option value="$PROJECT_DIR$/repository/GerichtArtRepository.php" />
-        <option value="$PROJECT_DIR$/controller/GerichtArtController.php" />
         <option value="$PROJECT_DIR$/view/gericht_meineGerichteArten.php" />
+        <option value="$PROJECT_DIR$/view/gerichtart_createGerichtart.php" />
+        <option value="$PROJECT_DIR$/view/header.php" />
+        <option value="$PROJECT_DIR$/view/gerichtart_meineGerichteArten.php" />
+        <option value="$PROJECT_DIR$/view/gerichtart_update.php" />
+        <option value="$PROJECT_DIR$/repository/GerichtArtRepository.php" />
+        <option value="$PROJECT_DIR$/view/gericht_addGericht.php" />
+        <option value="$PROJECT_DIR$/repository/GerichtRepository.php" />
+        <option value="$PROJECT_DIR$/controller/GerichtArtController.php" />
+        <option value="$PROJECT_DIR$/view/gericht_index.php" />
+        <option value="$PROJECT_DIR$/controller/GerichtController.php" />
+        <option value="$PROJECT_DIR$/view/user_index.php" />
+        <option value="$PROJECT_DIR$/view/user_gerichtindex.php" />
+        <option value="$PROJECT_DIR$/controller/UserController.php" />
+        <option value="$PROJECT_DIR$/lib/Security.php" />
       </list>
     </option>
   </component>
@@ -198,7 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,6 +245,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -261,12 +276,13 @@
       <option name="presentableId" value="Default" />
       <updated>1524467930841</updated>
       <workItem from="1524467932205" duration="5486000" />
-      <workItem from="1524481888498" duration="2426000" />
+      <workItem from="1524481888498" duration="9109000" />
+      <workItem from="1524549749491" duration="4589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7912000" />
+    <option name="totallyTimeSpent" value="19184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="959" extended-state="6" />
@@ -302,7 +318,107 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/gericht_meineGerichteArten.php">
+    <entry file="file://$PROJECT_DIR$/repository/GerichtRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="61" column="59" lean-forward="false" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
+          <folding>
+            <marker date="1524550302567" expanded="true" signature="1021:1065" ph="SELECT * FRO... $" />
+            <marker date="1524550302567" expanded="true" signature="1863:1960" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524550302567" expanded="true" signature="2246:2318" ph="UPDATE ${$th... " />
+            <marker date="1524550302567" expanded="true" signature="2625:2670" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/GerichtArtController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="81" column="58" lean-forward="true" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/GerichtController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gericht_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SpielerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="100" column="5" lean-forward="true" selection-start-line="40" selection-start-column="3" selection-end-line="100" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/MannschaftController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/SpielerRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <marker date="1524468306580" expanded="true" signature="1025:1119" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524468306580" expanded="true" signature="1412:1503" ph="UPDATE ${$th... " />
+            <marker date="1524468306580" expanded="true" signature="1797:1842" ph="SELECT * FRO... $" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/MannschaftRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="76" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="76" />
+          <folding>
+            <marker date="1524468298058" expanded="true" signature="1016:1091" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524468298058" expanded="true" signature="1399:1468" ph="UPDATE ${$th... " />
+            <marker date="1524468298058" expanded="true" signature="1793:1838" ph="SELECT * FRO... $" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/GerichtArtRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="55" lean-forward="false" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
+          <folding>
+            <marker date="1524489577784" expanded="true" signature="1030:1074" ph="SELECT * FRO... $" />
+            <marker date="1524489577784" expanded="true" signature="1855:1934" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524489577784" expanded="true" signature="2202:2277" ph="UPDATE ${$th... " />
+            <marker date="1524489577784" expanded="true" signature="2538:2583" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gericht_addGericht.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gerichtart_meineGerichteArten.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -347,10 +463,10 @@
         <state relative-caret-position="153">
           <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
-            <marker date="1524483478192" expanded="true" signature="1024:1068" ph="SELECT * FRO... $" />
-            <marker date="1524483478192" expanded="true" signature="1945:2038" ph="INSERT INTO ${$this-&gt;tableName}... " />
-            <marker date="1524483478192" expanded="true" signature="2431:2504" ph="UPDATE ${$th... " />
-            <marker date="1524483478192" expanded="true" signature="2811:2856" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+            <marker date="1524550302567" expanded="true" signature="1021:1065" ph="SELECT * FRO... $" />
+            <marker date="1524550302567" expanded="true" signature="1863:1960" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524550302567" expanded="true" signature="2246:2318" ph="UPDATE ${$th... " />
+            <marker date="1524550302567" expanded="true" signature="2625:2670" ph="SELECT * FRO... ${$this-&gt;tableName}" />
           </folding>
         </state>
       </provider>
@@ -399,22 +515,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Repository.php">
+    <entry file="file://$PROJECT_DIR$/controller/GerichtController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="133" column="38" lean-forward="false" selection-start-line="133" selection-start-column="28" selection-end-line="133" selection-end-column="38" />
-          <folding>
-            <marker date="1524138631222" expanded="true" signature="3791:3834" ph="SELECT * FRO... $" />
-            <marker date="1524138631222" expanded="true" signature="4995:5037" ph="SELECT * FRO... $" />
-            <marker date="1524138631222" expanded="true" signature="5780:5821" ph="DELETE FROM " />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/SpielerController.php">
+    <entry file="file://$PROJECT_DIR$/view/user_create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="48" lean-forward="false" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+        <state relative-caret-position="306">
+          <caret line="18" column="62" lean-forward="false" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Dispatcher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -427,18 +555,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/MannschaftController.php">
+    <entry file="file://$PROJECT_DIR$/view/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="64" lean-forward="true" selection-start-line="23" selection-start-column="64" selection-end-line="23" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gerichtart_createGerichtart.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="24" />
+          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gerichtart_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="48" lean-forward="true" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/MannschaftController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/GerichtArtRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="62" column="55" lean-forward="false" selection-start-line="62" selection-start-column="55" selection-end-line="62" selection-end-column="55" />
+          <folding>
+            <marker date="1524489577784" expanded="true" signature="1030:1074" ph="SELECT * FRO... $" />
+            <marker date="1524489577784" expanded="true" signature="1855:1934" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524489577784" expanded="true" signature="2202:2277" ph="UPDATE ${$th... " />
+            <marker date="1524489577784" expanded="true" signature="2538:2583" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/SpielerRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <marker date="1524468306580" expanded="true" signature="1025:1119" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524468306580" expanded="true" signature="1412:1503" ph="UPDATE ${$th... " />
+            <marker date="1524468306580" expanded="true" signature="1797:1842" ph="SELECT * FRO... $" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gericht_addGericht.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/SpielerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repository/GerichtRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding>
+            <marker date="1524550302567" expanded="true" signature="1021:1065" ph="SELECT * FRO... $" />
+            <marker date="1524550302567" expanded="true" signature="1863:1960" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524550302567" expanded="true" signature="2246:2318" ph="UPDATE ${$th... " />
+            <marker date="1524550302567" expanded="true" signature="2625:2670" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gerichtart_meineGerichteArten.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="158" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="158" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/gericht_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/GerichtController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/GerichtArtController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user_gerichtindex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="125" lean-forward="false" selection-start-line="8" selection-start-column="125" selection-end-line="8" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user_login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/user_index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="63" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -453,50 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/user_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/user_create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="62" lean-forward="false" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repository/SpielerRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding>
-            <marker date="1524468306580" expanded="true" signature="1025:1119" ph="INSERT INTO ${$this-&gt;tableName}... " />
-            <marker date="1524468306580" expanded="true" signature="1412:1503" ph="UPDATE ${$th... " />
-            <marker date="1524468306580" expanded="true" signature="1797:1842" ph="SELECT * FRO... $" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="52" />
-          <folding>
-            <marker date="1524474950639" expanded="true" signature="1115:1230" ph="INSERT INTO ${$this-&gt;tableName}... " />
-            <marker date="1524474950639" expanded="true" signature="1640:1713" ph="UPDATE ${$th... " />
-            <marker date="1524474950639" expanded="true" signature="2020:2065" ph="SELECT * FRO... ${$this-&gt;tableName}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/repository/MannschaftRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="58" lean-forward="false" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+        <state relative-caret-position="306">
+          <caret line="42" column="76" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="76" />
           <folding>
             <marker date="1524468298058" expanded="true" signature="1016:1091" ph="INSERT INTO ${$this-&gt;tableName}... " />
             <marker date="1524468298058" expanded="true" signature="1399:1468" ph="UPDATE ${$th... " />
@@ -505,92 +721,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/DefaultController.php">
+    <entry file="file://$PROJECT_DIR$/repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1003">
+          <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+          <folding>
+            <marker date="1524474950639" expanded="true" signature="1115:1230" ph="INSERT INTO ${$this-&gt;tableName}... " />
+            <marker date="1524474950639" expanded="true" signature="1640:1713" ph="UPDATE ${$th... " />
+            <marker date="1524474950639" expanded="true" signature="2020:2065" ph="SELECT * FRO... ${$this-&gt;tableName}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/user_index.php">
+    <entry file="file://$PROJECT_DIR$/lib/Repository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Dispatcher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="594">
+          <caret line="155" column="46" lean-forward="true" selection-start-line="155" selection-start-column="46" selection-end-line="155" selection-end-column="46" />
+          <folding>
+            <marker date="1524138631222" expanded="true" signature="3791:3834" ph="SELECT * FRO... $" />
+            <marker date="1524138631222" expanded="true" signature="4995:5037" ph="SELECT * FRO... $" />
+            <marker date="1524138631222" expanded="true" signature="5780:5821" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="126" column="49" lean-forward="false" selection-start-line="126" selection-start-column="49" selection-end-line="126" selection-end-column="49" />
+        <state relative-caret-position="442">
+          <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="72" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/header.php">
+    <entry file="file://$PROJECT_DIR$/lib/Security.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/GerichtController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repository/GerichtRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding>
-            <marker date="1524483478192" expanded="true" signature="1024:1068" ph="SELECT * FRO... $" />
-            <marker date="1524483478192" expanded="true" signature="1945:2038" ph="INSERT INTO ${$this-&gt;tableName}... " />
-            <marker date="1524483478192" expanded="true" signature="2431:2504" ph="UPDATE ${$th... " />
-            <marker date="1524483478192" expanded="true" signature="2811:2856" ph="SELECT * FRO... ${$this-&gt;tableName}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/repository/GerichtArtRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-          <folding>
-            <marker date="1524483785116" expanded="true" signature="1030:1074" ph="SELECT * FRO... $" />
-            <marker date="1524483785116" expanded="true" signature="1951:2044" ph="INSERT INTO ${$this-&gt;tableName}... " />
-            <marker date="1524483785116" expanded="true" signature="2437:2510" ph="UPDATE ${$th... " />
-            <marker date="1524483785116" expanded="true" signature="2817:2862" ph="SELECT * FRO... ${$this-&gt;tableName}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/GerichtArtController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/gericht_meineGerichteArten.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+        <state relative-caret-position="340">
+          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
           <folding />
         </state>
       </provider>

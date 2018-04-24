@@ -2,14 +2,14 @@
 if(isset($_SESSION['user_id'])): ?>
 
 <div class="content">
-    <form action="/mannschaft/doCreateMannschaft" method="post">
+    <form action="/gerichtart/doCreate" method="post">
         <span class="titel"><?= $heading ?></span><br><br>
 
-        <label for="mannschaftsname" class="label">Mannschaftsname</label>
-        <input id="mannschaftsname" name="mannschaftsname" type="text" class="textForm" required/>
+        <label for="gerichtart" class="label">Gerichtart</label>
+        <input id="gerichtart" name="gerichtart" type="text" class="textForm" required/>
 
-        <label for="coach" class="label">Coach</label>
-        <input id="coach" name="coach" type="text" class="textForm" required/>
+        <label for="gerichtartbeschreibung" class="label">Beschreibung</label>
+        <input id="gerichtartbeschreibung" name="gerichtartbeschreibung" type="text" class="textForm" required/>
 
         <input id="send" name="send" value="Erstellen" type="submit" class="submitForm">
 

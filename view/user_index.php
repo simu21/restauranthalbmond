@@ -6,17 +6,17 @@ else: ?>
     <span class="titel"><?= $heading ?></span>
 </div>
 
-<?php if (empty($users)): ?>
+<?php if (empty($gerichtarten)): ?>
     <div class="content">
         <h2 class="u_titel">Hoopla!Es sind noch keine Gerichte vorhanden!</h2>
     </div>
 <?php else: ?>
-    <?php foreach ($users as $user): ?>
+    <?php foreach ($gerichtarten as $gerichtart): ?>
         <div class="content">
             <div style="float: left;">
-                <h2 class = "u_titel">Verein: <?= $user->vereinsname;?></h2><br>
-                <h3 class = "u_titel">Kontaktperson: <?= " " .$user->kontaktperson;?></h3><br>
-                <h4 class="u_titel"> Email: <a class="link" href="mailto:<?= $user->mail;?>"><?= $user->mail;?></a></h4>
+                <h2 class = "u_titel">Gerichtart: <?= $gerichtart->gerichtartname;?></h2><br>
+                <h3 class = "u_titel"> <?= " " .$gerichtart->beschreibung;?></h3><br>
+                <a title="spieler" href="/user/gerichteanzeigen?id=<?= $gerichtart->id ?>"><div class="submitForm"><i class="fas fa-users"></i>Zu den Gerichten</div></a>
             </div>
 
             <div style="clear: both;"></div>

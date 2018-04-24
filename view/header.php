@@ -21,7 +21,7 @@
             <?php } ?>
             <?php
                 if(isset($_SESSION['user_id'])){
-                    echo "<li><a href=\"/gerichtart/meineGerichte\">Meine Gerichte</a></li>";
+                    echo "<li><a href=\"/gerichtart/meineGerichtarten\">Meine Gerichte</a></li>";
                 }
                 else{
                     echo "<li><a href=\"/user/\">Gerichte</a></li>";
@@ -30,7 +30,7 @@
                     echo "<li><a href=\"/user/updateVerein\">Verein bearbeiten</a></li>";
                 }
                 if(isset($_SESSION['user_id'])){
-                    echo "<li><a href=\"/mannschaft/createMannschaft\">Gerichtart hinzufügen</a></li>";
+                    echo "<li><a href=\"/gerichtart/createGerichtart\">Gerichtart hinzufügen</a></li>";
                 }
                 if(isset($_SESSION['user_id'])){
                     echo "<li><a href=\"/user/logout\">Logout</a></li>";
