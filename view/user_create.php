@@ -25,7 +25,6 @@
         <label for="password" class="label">Passwort</label>
         <input id="password" name="password" type="password" class="textForm" required/>
 
-
         <input id="send" name="send" value="Registrieren" type="submit" class="submitForm">
 
         <br><br>

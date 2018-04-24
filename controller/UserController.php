@@ -13,12 +13,18 @@ class UserController
     public function index()
     {
         $gerichtartRepository = new GerichtArtRepository();
+        $userRepository = new UserRepository();
+
 
 
         $view = new View('user_index');
         if(isset($_GET['message'])) {
             $fehlermeldung = $_GET["message"];
             $view->fehlermeldung = $fehlermeldung;
+        }
+        if(isset($_SESSION['user_id'])){
+            $uid = $_SESSION['user_id'];
+            $view->user = $userRepository->readById($uid);
         }
         $view->title = 'Alle Gerichte';
         $view->heading = 'Alle Gerichte';
@@ -28,30 +34,20 @@ class UserController
 
 
 
-    // Verein update-Anzeige
-    public function updateVerein(){
-        $userRepository = new UserRepository();
-        $view = new View('user_update');
-        $view->title = 'Verein bearbeiten';
-        $view->heading = 'Verein bearbeiten';
-        if(isset($_SESSION['user_id'])) {
-            $uid = $_SESSION['user_id'];
-            $view->verein = $userRepository->readById($uid);
-        }
-        $view->display();
-    }
     public function gerichteanzeigen(){
         $gerichtRepository = new GerichtRepository();
+        $userRepository = new UserRepository();
         $gerichartRepository = new GerichtArtRepository();
         $view = new View('user_gerichtindex');
         $view->heading = 'Gerichte';
         $view->title = 'Gerichte';
+        if(isset($_SESSION['user_id'])) {
+            $uid = $_SESSION['user_id'];}
         if(isset($_GET['id'])) {
             $gaid = $_GET['id'];
             $view->gerichtarten = $gerichartRepository->readById($gaid);
             $view->gaid= $gaid;
             $view->gerichte = $gerichtRepository->readAllGerichte($gaid);
-
         }
         $view->display();
     }
@@ -112,9 +108,9 @@ class UserController
             $telefonnummer = $_POST['telefonnummer'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-
-            $userRepository = new UserRepository();
-            $userRepository->create($vorname,$nachname,$plz,$ort,$telefonnummer, $email, $password);
+            $admin = 0;
+                        $userRepository = new UserRepository();
+            $userRepository->create($vorname,$nachname,$plz,$ort,$telefonnummer, $email, $password,$admin);
         }
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
@@ -144,7 +140,7 @@ class UserController
                 if($userRepository->login($email, $password) < 1) {
                     header('Location: /user/login?message=Die Daten stimmen nicht überein!');
                 } else {
-                    header('Location: /gerichtart/meineGerichtarten');
+                    header('Location: /user');
                 }
             }
             else{

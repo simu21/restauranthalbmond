@@ -14,14 +14,20 @@ class GerichtArtController
     }
 
     public function createGerichtart(){
+        $userRepository = new UserRepository();
 
         $view = new View('gerichtArt_createGerichtArt');
         $view->title = 'Gericht hinzufügen';
         $view->heading = 'Gericht hinzufügen';
-        $view->display();
+        if(isset($_SESSION['user_id'])) {
+            $uid = $_SESSION['user_id'];
+            $view->user = $userRepository->readById($uid);
+            $view->display();
+        }
     }
 
     public function meineGerichtarten(){
+        Security::checkAdmin();
         $userRepository = new UserRepository();
         $gerichtArtRepository = new GerichtArtRepository();
         $view = new View('gerichtart_meineGerichteArten');
