@@ -1,16 +1,14 @@
 <?php
 
-require_once '../repository/UserRepository.php';
-require_once '../repository/GerichtRepository.php';
+require_once '../repository/ReservationRepository.php';
 
 /**
  * Siehe Dokumentation im DefaultController.
  */
-class GerichtController
+class ReservationController
 {
     public function index()
     {
-        $reservationRepository = new ReservationRepository();
         $view = new View('reservation_index');
         $view->title = 'Reservation';
         $view->heading = 'Reservation';
@@ -20,8 +18,8 @@ class GerichtController
     public function create()
     {
         $view = new View('reservation_create');
-        $view->title = 'Benutzer erstellen';
-        $view->heading = 'Benutzer erstellen';
+        $view->title = 'Reservation';
+        $view->heading = 'Reservation';
         $view->display();
     }
 
