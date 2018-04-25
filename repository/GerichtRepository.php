@@ -64,13 +64,14 @@ class GerichtRepository extends Repository
         $statement->bind_param('ssssi', $gerichtname,$beschreibung,$preis,$bildpfad,$gaid);
         $statement->execute();
     }
-    public function update($gaid,$gerichtname,$beschreibung){
-        $query = "UPDATE $this->tableName SET gerichtname = ?, beschreibung = ? WHERE id=? ;";
+
+    public function update($gid,$gerichtname,$beschreibung,$preis,$bildpfad){
+        $query = "UPDATE $this->tableName SET gerichtname = ?, beschreibung = ?,preis = ?,bildpfad = ? WHERE id=? ;";
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssi',$gerichtname,$beschreibung,$gaid);
+        $statement->bind_param('ssssi',$gerichtname,$beschreibung,$preis,$bildpfad,$gid);
         $statement->execute();
-        header('Location: /user/meinVerein');
     }
+
     public function login($loginemail,$loginpassword){
         $query = "SELECT * FROM $this->tableName WHERE mail = ?";
 

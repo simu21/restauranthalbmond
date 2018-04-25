@@ -10,12 +10,12 @@ class GerichtArtController
 {
     public function index()
     {
-        header('Location: /gerichtart/meineGerichtarten');
+        header('Location: /user');
     }
 
     public function createGerichtart(){
+        Security::checkAdmin();
         $userRepository = new UserRepository();
-
         $view = new View('gerichtArt_createGerichtArt');
         $view->title = 'Gericht hinzufügen';
         $view->heading = 'Gericht hinzufügen';
@@ -44,6 +44,7 @@ class GerichtArtController
 
     public function doCreate()
     {
+        Security::checkAdmin();
         if ($_POST['send']) {
             $gerichtart = $_POST['gerichtart'];
             $beschreibung = $_POST['gerichtartbeschreibung'];
@@ -59,7 +60,10 @@ class GerichtArtController
         header('Location: /gerichtart/meineGerichtarten');
     }
     public function update(){
+        Security::checkAdmin();
         $gerichtartRepository = new GerichtArtRepository();
+        $userRepository = new UserRepository();
+        $uid = $_SESSION['user_id'];
         $view = new View('gerichtart_update');
         $view->title = 'Gerichtart bearbeiten';
         $view->heading = 'Gerichtart bearbeiten';
@@ -67,12 +71,14 @@ class GerichtArtController
             //gaid = gerichtartID//
             $gaid = $_GET['id'];
             $view->gaid = $gaid;
+            $view->user = $userRepository->readById($uid);
             $view->gerichtart = $gerichtartRepository->readById($gaid);
         }
         $view->display();
     }
 
     public function doUpdate(){
+        Security::checkAdmin();
         if ($_POST['send']) {
             $gaid = $_GET['id'];
             $gerichtart = $_POST['gerichtart'];
@@ -85,6 +91,7 @@ class GerichtArtController
 
     public function delete()
     {
+        Security::checkAdmin();
         $gerichtartRepository = new GerichtArtRepository();
         $gerichtartRepository->deleteById($_GET['id']);
 

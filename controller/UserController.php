@@ -33,6 +33,17 @@ class UserController
     }
 
 
+    public function alleUser(){
+        Security::checkAdmin();
+        $uid = $_SESSION['user_id'];
+        $userRepository = new UserRepository();
+        $view = new View('user_alleUser');
+        $view->title = 'Alle User';
+        $view->heading = 'Alle User';
+        $view->user = $userRepository->readById($uid);
+        $view->users = $userRepository->readAll();
+        $view->display();
+    }
 
     public function gerichteanzeigen(){
         $gerichtRepository = new GerichtRepository();
@@ -42,7 +53,9 @@ class UserController
         $view->heading = 'Gerichte';
         $view->title = 'Gerichte';
         if(isset($_SESSION['user_id'])) {
-            $uid = $_SESSION['user_id'];}
+            $uid = $_SESSION['user_id'];
+            $view->user = $userRepository->readById($uid);
+        }
         if(isset($_GET['id'])) {
             $gaid = $_GET['id'];
             $view->gerichtarten = $gerichartRepository->readById($gaid);
@@ -77,7 +90,12 @@ class UserController
 
     //Logout anzeigen
     public function logout(){
+        $userRepository = new UserRepository();
+        if(isset($_SESSION['user_id'])){
+            $uid = $_SESSION['user_id'];
+        }
         $view = new View('user_logout');
+        $view->user = $userRepository->readById($uid);
         $view->title = 'Logout';
         $view->display();
     }
@@ -101,15 +119,16 @@ class UserController
     public function doCreate()
     {
         if ($_POST['send']) {
-            $vorname = $_POST['vorname'];
-            $nachname = $_POST['nachname'];
-            $plz = $_POST['plz'];
-            $ort = $_POST['ort'];
-            $telefonnummer = $_POST['telefonnummer'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+            $vorname = htmlspecialchars($_POST['vorname']);
+            $nachname = htmlspecialchars($_POST['nachname']);
+            $plz = htmlspecialchars($_POST['plz']);
+            $ort = htmlspecialchars($_POST['ort']);
+            $telefonnummer = htmlspecialchars($_POST['telefonnummer']);
+            $email = htmlspecialchars($_POST['email']);
+            $password = htmlspecialchars($_POST['password']);
             $admin = 0;
-                        $userRepository = new UserRepository();
+            echo $vorname;
+            $userRepository = new UserRepository();
             $userRepository->create($vorname,$nachname,$plz,$ort,$telefonnummer, $email, $password,$admin);
         }
 
@@ -121,6 +140,7 @@ class UserController
     public function doLogin()
     {
         if ($_POST['send']) {
+
             if(isset($_POST['email'])&&isset($_POST['password'])){
 
             $email = $_POST['email'];
@@ -140,11 +160,15 @@ class UserController
                 if($userRepository->login($email, $password) < 1) {
                     header('Location: /user/login?message=Die Daten stimmen nicht überein!');
                 } else {
-                    header('Location: /user');
-                }
-            }
-            else{
+                    $user = $userRepository->readById($_SESSION['user_id']);
+                    if ($user->admin == 1){
+                    header('Location: /gerichtart/meineGerichtarten');
+                    }
+                    else{
+                        header('Location: /user');
+                    }
 
+                }
             }
         }
 
@@ -159,6 +183,6 @@ class UserController
         $userRepository->deleteById($_GET['id']);
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
+        header('Location: /user/alleUser');
     }
 }

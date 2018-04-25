@@ -27,7 +27,7 @@ if(isset($_SESSION['user_id'])):?>
     <?php endforeach ?>
 <?php endif ?>
 
-    
+
 <?php else: ?>
 
     <?php
