@@ -13,7 +13,7 @@ class UserRepository extends Repository
      * Diese Variable wird von der Klasse Repository verwendet, um generische
      * Funktionen zur Verfügung zu stellen.
      */
-    protected $tableName = 'user';
+    protected $tableName = 'users';
 
     /**
      * Erstellt einen neuen benutzer mit den gegebenen Werten.

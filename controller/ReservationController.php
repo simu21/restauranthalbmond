@@ -23,11 +23,18 @@ class ReservationController
         $view->display();
     }
 
+    public function thanks()
+    {
+        $view = new View('reservation_thanks');
+        $view->title = 'Reservation';
+        $view->heading = 'Reservation';
+        $view->display();
+    }
+
     public function doCreate()
     {
-        if(isset($_POST['submit'])){
             $to = "simonecrupi21@gmail.com"; // this is your Email address
-            $from = $_SESSION['email']; // this is the sender's Email address
+            $from = "simonecrupi21@gmail.com"; // this is the sender's Email address
             $first_name = $_SESSION['name'];
             $last_name = $_SESSION['nachname'];
             $date = $_POST['date'];
@@ -42,9 +49,8 @@ class ReservationController
             $headers2 = "From:" . $to;
             mail($to,$subject,$message,$headers);
             mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-            header('Location: reservation_thanks');
+            header('Location: thanks');
             //tish auf reserviert setzen
-        }
     }
 
     public function delete()

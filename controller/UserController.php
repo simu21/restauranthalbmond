@@ -109,7 +109,7 @@ class UserController
             $email = $_POST['email'];
             $password = $_POST['password'];
             $admin = 0;
-                        $userRepository = new UserRepository();
+            $userRepository = new UserRepository();
             $userRepository->create($vorname,$nachname,$plz,$ort,$telefonnummer, $email, $password,$admin);
         }
 

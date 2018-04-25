@@ -18,6 +18,95 @@ header {
     padding-bottom: 20px;
     margin-bottom: 40px;
 }
+
+.tables {
+    margin-top: 40px;
+    background-color: white;
+    width: 920px;
+    height: 1100px;
+    margin: 0 auto 40px; auto;
+    padding: 20px;
+    color: rgb(80,80,80);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.1);
+}
+
+
+.tables_terasse a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.tables_terasse div{
+    float: left;
+    height: 100px;
+    width: 100px;
+    margin: 25px;
+    background: url("/images/table.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tables_terasse{
+    padding: 10px;
+    height: 290px;
+    width: 900px;
+    background-color: deepskyblue;
+}
+
+.tables_wintergarten a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.tables_wintergarten div{
+    float: right;
+    height: 100px;
+    width: 100px;
+    background-color: rosybrown;
+    margin: 25px;
+    background: url("/images/table.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tables_wintergarten{
+    padding: 10px;
+    height: 770px;
+    width: 310px;
+    background-color: lawngreen;
+    float: left;
+}
+
+.tables_restaurant a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.tables_restaurant div{
+    float: right;
+    height: 100px;
+    width: 100px;
+    background-color: rosybrown;
+    margin: 25px;
+    background: url("/images/table.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tables_restaurant{
+    padding: 10px;
+    height: 770px;
+    width: 570px;
+    background-color: deeppink;
+    float: right;
+}
+
 .titel {
     font-family: 'lobster', cursive;
     font-size: 30px;
