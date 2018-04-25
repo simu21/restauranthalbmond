@@ -11,13 +11,13 @@
         <input id="nachname" name="nachname" type="text" class="textForm" required/>
 
         <label for="plz" class="label">PLZ</label>
-        <input id="plz" name="plz" type="text" class="textForm" required/>
+        <input id="plz" name="plz" type="number" class="textForm" required/>
 
         <label for="ort" class="label">Ort</label>
         <input id="ort" name="ort" type="text" class="textForm" required/>
 
         <label for="telefonnummer" class="label">Telefonnummer</label>
-        <input id="telefonnummer" name="telefonnummer" type="text" class="textForm" required/>
+        <input id="telefonnummer" name="telefonnummer"  type="number" class="textForm" required/>
 
         <label for="email" class="label">Mail</label>
         <input id="email" name="email" type="email" class="textForm" required/>

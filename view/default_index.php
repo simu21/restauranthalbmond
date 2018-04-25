@@ -1,11 +1,6 @@
 <?php
 
 if (isset( $_SESSION['user_id'] ) ) {
-    echo "<br/>";
-    echo "<div class='contentuserindex'>
-                    <p>Herzlich Willkommen Sie sind nun eingeloggt!</p>
-                  </div>" ;
-
 }
 ?>
 <div class="content">

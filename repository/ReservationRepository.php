@@ -13,7 +13,7 @@ class ReservationRepository extends Repository
      * Diese Variable wird von der Klasse Repository verwendet, um generische
      * Funktionen zur Verfügung zu stellen.
      */
-    protected $tableName = 'artgericht';
+    protected $tableName = 'reservation';
 
     /**
      * Erstellt einen neuen benutzer mit den gegebenen Werten.
@@ -29,7 +29,7 @@ class ReservationRepository extends Repository
      * @throws Exception falls das Ausführen des Statements fehlschlägt
      */
 
-    public function readAllGerichte($uid)
+    public function readAllReservationen($uid)
     {
         // Query erstellen
         $query = "SELECT * FROM {$this->tableName} WHERE uid=?";
@@ -57,46 +57,19 @@ class ReservationRepository extends Repository
         return $rows;
     }
 
-    public function create($vereinsname, $kontaktperson, $email, $password)
+    public function create($uid,$datum, $zeit, $personen)
     {
-        $password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 14]);
 
-        $query = "INSERT INTO $this->tableName (vereinsname, kontaktperson, mail, passwort) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (datum, zeit, anzahlpersonen, uid) VALUES (?, ?, ?, ?)";
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssss', $vereinsname, $kontaktperson, $email, $password);
+        $statement->bind_param('ssii', $datum, $zeit, $personen, $uid);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
 
         return $statement->insert_id;
-    }
-    public function update($uid,$vereinsname,$kontaktperson){
-        $query = "UPDATE $this->tableName SET vereinsname = ?, kontaktperson = ? WHERE id=? ;";
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('ssi',$vereinsname,$kontaktperson,$uid);
-        $statement->execute();
-        header('Location: /user/meinVerein');
-    }
-    public function login($loginemail,$loginpassword){
-        $query = "SELECT * FROM $this->tableName WHERE mail = ?";
-
-        $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('s',$loginemail);
-        $statement->execute();
-        $result = $statement->get_result();
-        $user = $result->fetch_object();
-
-        // Verify user password and set $_SESSION
-        if (password_verify($loginpassword, $user->passwort)){
-            $_SESSION['user_id'] = $user->id;
-            return $user->id;
-        } else {
-
-            return -1;
-
-        }
     }
 }
 

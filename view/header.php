@@ -19,14 +19,17 @@
 
             <?php
             if(isset($_SESSION['user_id'])){
-                echo "<li><a href=\"/reservation/myReservations\">Meine Reservationen</a></li>";
-                echo "<li><a href=\"/reservation\">Reservieren</a></li>";
-                echo "<li><a href=\"/user/\">Gerichte</a></li>";
                 echo "<li><a href=\"/user/logout\">Logout</a></li>";
                 if(isset($user)){
                     if($user->admin == 1){
-                        echo "<li><a href=\"/gerichtart/meineGerichtarten\">Meine Gerichtarten</a></li>";
+                        echo "<li><a href=\"/gerichtart/meineGerichtarten\">Meine Gerichte</a></li>";
+                        echo "<li><a href=\"/user/alleUser\">Alle User</a></li>";
                         echo "<li><a href=\"/gerichtart/createGerichtart\">Gerichtart hinzufügen</a></li>";
+                    }
+                    else{
+                        echo "<li><a href=\"/user/\">Gerichte</a></li>";
+                        echo "<li><a href=\"/reservation\">Reservieren</a></li>";
+                        echo "<li><a href=\"/reservation/meineReservationen\">Meine Reservationen</a></li>";
                     }
                 }
             }
@@ -35,6 +38,7 @@
                 echo  "<li><a href='/'>Home</a></li>";
                 echo "<li><a href=\"/user/login\">login</a></li>";
                 echo "<li><a href=\"/user/\">Gerichte</a></li>";
+                echo "<li><a href=\"/reservation/create\">Reservieren</a></li>";
                  }
                 else{
                     echo "<li><a href=\"/user/\">Gerichte</a></li>";
